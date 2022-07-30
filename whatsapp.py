@@ -30,7 +30,7 @@ def connect_sql():
   mydb=mysql_conn.connect(host='localhost',
                              auth_plugin='mysql_native_password',
                              user='root',
-                             password='Sreedhar@123'
+                             password='your _password'
                              )
   
   return mydb
@@ -93,7 +93,7 @@ def results():
                 return 'we recieved the same response'
             if 'statuses' in str(response):
                 return 'we have recievied your webhook thank you !'
-            if 'statuses' not in str(response) and response['entry'][0]['changes'][0]['value']['messages'][0]['text']['body']!=person['response']['entry'][0]['changes'][0]['value']['messages'][0]['text']['body']:
+            if 'statuses' not in str(response) :
               person['response']=response
               name=response['entry'][0]['changes'][0]['value']['contacts'][0]['profile']['name']
               number=response['entry'][0]['changes'][0]['value']['contacts'][0]['wa_id']
@@ -120,7 +120,7 @@ def results():
                 mydb=mysql_conn.connect(host='localhost',
                              auth_plugin='mysql_native_password',
                              user='root',
-                             password='Sreedhar@123'
+                             password='your_password'
                              )
                 crsr=mydb.cursor()
                 crsr.execute('use whatsapp')
@@ -137,7 +137,7 @@ def results():
                 mydb=mysql_conn.connect(host='localhost',
                              auth_plugin='mysql_native_password',
                              user='root',
-                             password='Sreedhar@123'
+                             password='your_password'
                              )
                 value=(amount,name)
                 crsr=mydb.cursor()
@@ -157,7 +157,7 @@ def results():
                   mydb=mysql_conn.connect(host='localhost',
                              auth_plugin='mysql_native_password',
                              user='root',
-                             password='Sreedhar@123'
+                             password='yourpassword'
                              )
                   value=[(amount,name)]
                   crsr=mydb.cursor()
