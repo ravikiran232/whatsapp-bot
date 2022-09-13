@@ -74,9 +74,9 @@ steps:
   # [START cloudbuild_python_deploy_yaml]
   # Deploy to Cloud Run
   - name: google/cloud-sdk
-    args: ['gcloud', 'run', 'deploy', 'whatsappserver-${SHORT_SHA}', 
-           '--image=us-central1-docker.pkg.dev/${PROJECT_ID}/${_ARTIFACT_REGISTRY_REPO}/myimage:${SHORT_SHA}', 
-           '--region', 'us-central1', '--platform', 'managed', 
+    args: ['gcloud', 'run', 'deploy', 'whatsappserver-${1b8e285d9cac02a1e032d089372be98208693348be83a214ba1d5da951232ef9}', 
+           '--image=gcr.io/cloudrun/placeholder@sha256:1b8e285d9cac02a1e032d089372be98208693348be83a214ba1d5da951232ef9', 
+           '--region', 'asia-south2', '--platform', 'managed', 
            '--allow-unauthenticated']
   # [END cloudbuild_python_deploy_yaml]
   
