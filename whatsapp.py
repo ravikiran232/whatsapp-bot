@@ -42,7 +42,7 @@ def get_random_string(length):
            result_str="order_"+result_str
 def send_message(body,number):
     url='https://graph.facebook.com/v13.0/107230952048191/messages'
-    headers={'Authorization': 'Bearer EAAID3XxMVc4BAKr1tCzj4bi1JmOQ17ga4ZCkveMcF4ErwqpZAcSsxvEhoooWU7NgaD30vGwZCaDLW78z192BdUdz4CaJiRr6dunTnj6EgdRMiQwxNToZA8OJXPblAFA9t3Jy42Catdp9Y0EeEosLFoh0IAtkdwb9e06FMbbAjizutqPZALUY8VTIlYRMnNDDissmvjgtcmgZDZD',
+    headers={'Authorization': 'Bearer EAAID3XxMVc4BAP8khgZBRdXfRdlyCAuv5KKvSmDOu9PcEU0dOnhRJAP5K6ZBYbIRvPQtzqaqRn3vKt7QYxXRvfhN5GbiBKKojmTyeUb3XZAM4oeP8ZA5m4nCasDNOoAVqmGRW8MDhKpMvsqyHIrkZBD1qQIVqHeS4IeJiaslbtWeZAFK4dAHZAoZBZBEZC31jtgqtXLaZBrxaZBBwr1dIBvS9FUZA',
              'Content-Type':'application/json'}
     data={
   "messaging_product": "whatsapp",
@@ -191,7 +191,7 @@ def results():
                           send_message('payment success your transfer will be initiated shortly',number=number)
                           value=(name,int(number),order_id,result[0][1],result_upi[0][0],'pending to transfer','0000')
                           crsr.execute('''insert into user_transactions(customer_name,mobile_no,order_id,amount,transferring_to,status
-                                       ,card_ending) values=(%s,%s,%s,%s,%s,%s,%s);''',value)
+                                       ,card_ending) values(%s,%s,%s,%s,%s,%s,%s);''',value)
                           mydb.commit()
                           value=[(name)]
                           crsr.execute('delete from user_memory where name=%s',value)
@@ -202,7 +202,7 @@ def results():
                           send_message('payment failed to reattempt the payment send ok',number=number)
                           value=(name,number,order_id,result[0][1],result_upi[0][0],'transaction failed','0000')
                           crsr.execute('''insert into user_transactions(customer_name,mobile_no,order_id,amount,transferring_to,status
-                                       ,card_ending) values=(%s,%s,%s,%s,%s,%s,%s);''',value)
+                                       ,card_ending) values(%s,%s,%s,%s,%s,%s,%s);''',value)
                           mydb.commit()
                           value=[(name)]
                           crsr.execute('delete from user_memory where name=%s',value)
