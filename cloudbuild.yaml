@@ -16,5 +16,3 @@ steps:
       - "us-central1"
       - "--platform"
       - "managed"
-images:
-  - gcr.io/my-project/github.com/ravikiran232/whatsapp-bot.com.com
