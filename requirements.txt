@@ -1,0 +1,8 @@
+flask
+mysql.connector
+time
+requests
+json5
+string
+random
+os
