@@ -9,7 +9,6 @@ steps:
     args:
       - "run"
       - "deploy"
-      - "[SERVICE_NAME]"
       - "--image"
       - "gcr.io/my-project/github.com/ravikiran232/whatsapp-bot.com:$COMMIT_SHA"
       - "--region"
